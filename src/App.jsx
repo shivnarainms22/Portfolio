@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import logo from "/logo.png";
 
 // Particle Canvas Background
 const ParticleBackground = () => {
@@ -167,7 +168,7 @@ export default function Portfolio() {
       {/* Navbar */}
       <nav style={{ ...styles.nav, backdropFilter: "blur(12px)", backgroundColor: scrollY > 50 ? "rgba(255,255,255,0.85)" : "transparent", boxShadow: scrollY > 50 ? "0 1px 12px rgba(0,0,0,0.06)" : "none" }}>
         <div style={styles.navInner}>
-          <img src="/logo.png" alt="Logo" style={styles.logo} />
+          <img src={logo} alt="Logo" style={styles.logo} />
           <div style={styles.navLinks}>
             {navItems.map((item) => (
               <button key={item} onClick={() => scrollTo(item.toLowerCase())} style={{ ...styles.navBtn, color: activeNav === item ? "#4f46e5" : "#64748b", fontWeight: activeNav === item ? 600 : 400 }}>
