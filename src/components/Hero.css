@@ -1,0 +1,114 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+.hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-subtle);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero__name {
+  font-family: var(--font-serif);
+  font-size: 64px;
+  color: var(--color-heading);
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.hero__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 auto 24px;
+}
+
+.hero__desc {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--color-subtle);
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.hero__cta-primary {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--color-base);
+  background: var(--color-heading);
+}
+
+.hero__cta-primary:hover {
+  background: #d4d4d8;
+}
+
+.hero__cta-secondary {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--color-description);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.hero__cta-secondary:hover {
+  color: var(--color-body);
+  border-color: var(--color-muted);
+}
+
+.hero__chevron {
+  position: absolute;
+  bottom: 40px;
+  color: var(--color-muted);
+  animation: hero-bounce 2s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 0.8; }
+}
+
+@media (max-width: 768px) {
+  .hero__name { font-size: 48px; }
+  .hero__desc { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .hero__name { font-size: 36px; }
+  .hero__cta { flex-direction: column; align-items: center; }
+  .hero__cta-primary, .hero__cta-secondary { width: 100%; text-align: center; }
+}

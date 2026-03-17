@@ -1,0 +1,59 @@
+.education {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.education__label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--color-muted);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.education__heading {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: var(--color-heading);
+  font-weight: 400;
+  margin-bottom: 64px;
+}
+
+.education__item {
+  margin-bottom: 48px;
+}
+
+.education__degree {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: #e4e4e7;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.education__school {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-subtle);
+  margin-bottom: 4px;
+}
+
+.education__year {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-muted);
+  letter-spacing: 1px;
+}
+
+.education__divider {
+  width: 20px;
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .education__heading { font-size: 32px; }
+}
