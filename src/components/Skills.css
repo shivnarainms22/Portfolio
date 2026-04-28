@@ -18,13 +18,34 @@
   font-size: 40px;
   color: var(--color-heading);
   font-weight: 400;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .skills__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+.skill-group {
+  padding: 24px;
+  border: 1px solid var(--color-surface);
+  background: var(--color-hover-surface);
+}
+
+.skill-group__title {
+  margin-bottom: 18px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skill-group__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
 }
 
@@ -46,4 +67,5 @@
 
 @media (max-width: 768px) {
   .skills__heading { font-size: 32px; }
+  .skills__grid { grid-template-columns: 1fr; }
 }

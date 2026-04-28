@@ -1,17 +1,27 @@
 import "./Hero.css";
+import { profile, contactInfo } from "../data/portfolio";
 
 export function Hero() {
   return (
     <header className="hero">
-      <div className="hero__subtitle">AI Engineer &amp; Researcher</div>
-      <h1 className="hero__name">Shivnarain<br />Sarin</h1>
+      <div className="hero__subtitle">{profile.heroSubtitle}</div>
+      <h1 className="hero__name">
+        {profile.heroTitle[0]}
+        <br />
+        {profile.heroTitle[1]}
+      </h1>
       <div className="hero__divider" />
-      <p className="hero__desc">
-        Building intelligent systems at the intersection of research and engineering.
-      </p>
+      <p className="hero__desc">{profile.heroDescription}</p>
       <div className="hero__cta">
         <a href="#projects" className="hero__cta-primary">View Work</a>
-        <a href="#contact" className="hero__cta-secondary">Get in Touch</a>
+        <a
+          href={contactInfo.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero__cta-secondary"
+        >
+          GitHub
+        </a>
       </div>
       <div className="hero__chevron" aria-hidden="true">
         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" strokeWidth="1.5">

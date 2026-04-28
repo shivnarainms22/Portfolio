@@ -1,4 +1,5 @@
 import { Section } from "./Section";
+import { profile } from "../data/portfolio";
 import "./About.css";
 
 export function About() {
@@ -6,17 +7,16 @@ export function About() {
     <Section id="about" label="About me">
       <div className="about">
         <div className="about__label">About</div>
-        <h2 className="about__heading">A bit about me.</h2>
-        <p className="about__text">
-          I'm a graduate student at Northeastern University pursuing a Master of
-          Science in Artificial Intelligence. My work spans reinforcement learning,
-          computer vision, and agentic AI systems.
-        </p>
-        <p className="about__text">
-          I like building things from the ground up. I care about understanding how
-          a system works end to end, from the algorithm all the way to the interface
-          someone actually uses.
-        </p>
+        <h2 className="about__heading">Building AI systems people can use.</h2>
+        {profile.about.map((paragraph) => (
+          <p key={paragraph} className="about__text">{paragraph}</p>
+        ))}
+        <div className="about__focus">
+          {profile.focusAreas.map((area) => (
+            <span key={area} className="about__pill">{area}</span>
+          ))}
+        </div>
+        <p className="about__note">{profile.openTo}</p>
       </div>
     </Section>
   );

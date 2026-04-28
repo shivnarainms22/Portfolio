@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { navItems, contactInfo } from "./data/portfolio";
+import { navItems, contactInfo, profile } from "./data/portfolio";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { Experience } from "./components/Experience";
+import { InteractiveBuilds } from "./components/InteractiveBuilds";
 import { Projects } from "./components/Projects";
+import { Leadership } from "./components/Leadership";
 import { Skills } from "./components/Skills";
 import { Education } from "./components/Education";
 import "./App.css";
@@ -27,7 +30,7 @@ export default function Portfolio() {
 
   return (
     <div>
-      <a href="#about" className="skip-link">Skip to main content</a>
+      <a href="#main" className="skip-link">Skip to main content</a>
 
       <nav className={`nav ${scrolled ? "nav--scrolled" : ""}`} aria-label="Main navigation">
         <a href="#" className="nav__logo">
@@ -47,7 +50,7 @@ export default function Portfolio() {
         </div>
         <button
           className="nav__toggle"
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => setMenuOpen((open) => !open)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >
@@ -57,15 +60,19 @@ export default function Portfolio() {
 
       <Hero />
 
-      <main>
+      <main id="main">
         <About />
+        <Experience />
         <Projects />
+        <InteractiveBuilds />
+        <Leadership />
         <Skills />
         <Education />
       </main>
 
       <footer className="footer" id="contact">
-        <h2 className="footer__heading">Let's connect.</h2>
+        <h2 className="footer__heading">Open to building ambitious AI products.</h2>
+        <p className="footer__text">{profile.openTo}</p>
         <div className="footer__links">
           <a href={`mailto:${contactInfo.email}`} className="footer__link">Email</a>
           <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="footer__link">LinkedIn</a>
