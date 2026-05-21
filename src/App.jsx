@@ -3,6 +3,7 @@ import { navItems, contactInfo, profile } from "./data/portfolio";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
+import { Research } from "./components/Research";
 import { InteractiveBuilds } from "./components/InteractiveBuilds";
 import { Projects } from "./components/Projects";
 import { Leadership } from "./components/Leadership";
@@ -63,6 +64,7 @@ export default function Portfolio() {
       <main id="main">
         <About />
         <Experience />
+        <Research />
         <Projects />
         <InteractiveBuilds />
         <Leadership />

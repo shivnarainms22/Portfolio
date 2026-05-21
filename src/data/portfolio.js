@@ -19,8 +19,6 @@ export const profile = {
 export const projects = [
   {
     title: "Research Agent",
-    kind: "Research system",
-    visualCode: "RA",
     desc: "Autonomous research system that discovers papers, analyzes them with AI, proposes experiments, runs approved evaluations, and writes weekly reports.",
     highlights: [
       "Connected ingestion, synthesis, experiment execution, retrieval, and reporting in one loop.",
@@ -31,8 +29,6 @@ export const projects = [
   },
   {
     title: "StockX",
-    kind: "Desktop AI product",
-    visualCode: "SX",
     desc: "Desktop AI stock analysis agent for Windows with portfolio tracking, sector screening, macro monitoring, and a multi-provider ReAct reasoning loop.",
     highlights: [
       "Built a product-style desktop interface instead of a notebook-first finance tool.",
@@ -43,8 +39,6 @@ export const projects = [
   },
   {
     title: "TwinMind Pro",
-    kind: "Realtime AI interface",
-    visualCode: "TM",
     desc: "Real-time AI meeting copilot that captures both sides of a browser-based call, transcribes each stream independently, and surfaces context-aware suggestions during the conversation.",
     highlights: [
       "Built dual-stream capture with microphone plus tab audio labeling speakers as You and Them.",
@@ -55,8 +49,6 @@ export const projects = [
   },
   {
     title: "ResumeForge",
-    kind: "Full-stack AI product",
-    visualCode: "RF",
     desc: "AI resume tailoring product that analyzes a job description, matches experience bullets, rewrites them responsibly, and exports an ATS-optimized one-page PDF.",
     highlights: [
       "Shipped a full-stack workflow across React, FastAPI, PostgreSQL, and LaTeX PDF generation.",
@@ -67,8 +59,6 @@ export const projects = [
   },
   {
     title: "AI Briefing",
-    kind: "Intelligence workspace",
-    visualCode: "AB",
     desc: "Production-oriented intelligence workspace for tracking research, markets, and competitor signals across a full-stack data and automation pipeline.",
     highlights: [
       "Structured the stack around Next.js, FastAPI, PostgreSQL, Redis, background jobs, and Docker Compose.",
@@ -78,8 +68,6 @@ export const projects = [
   },
   {
     title: "Earlier Work",
-    kind: "Foundation projects",
-    visualCode: "EW",
     desc: "Selected earlier projects that helped shape my current work across ML, retrieval, and full-stack engineering.",
     highlights: [
       "Tetris Reinforcement Learning Agent",
@@ -89,6 +77,42 @@ export const projects = [
       "Dog Breed Identification Model",
     ],
     tags: [],
+  },
+];
+
+export const research = [
+  {
+    title: "TinyLM",
+    kindLabel: "Original work — 275M LM from scratch",
+    desc:
+      "A 275M-parameter language model built and trained from scratch with Multi-head Latent Attention (for KV-cache compression) and the Muon optimizer, benchmarked end-to-end against TinyLlama-1.1B.",
+    highlights: [
+      "Designed a four-way ablation (MLA/MHA × Muon/AdamW) and pre-registered a falsifiable hypothesis, then reported results unedited.",
+      "Trained on FineWeb-Edu and evaluated on HellaSwag, ARC-Easy, LAMBADA, and Winogrande — reaching ARC-Easy within 1.9% of TinyLlama-1.1B at roughly a quarter of the parameters.",
+    ],
+    tags: ["Python", "PyTorch", "MLA", "Muon", "lm-eval", "HuggingFace"],
+    links: [
+      { label: "Model", url: "https://huggingface.co/Shiv-22/tinylm" },
+      { label: "Checkpoints", url: "https://huggingface.co/Shiv-22/tinylm-checkpoints" },
+      { label: "WandB", url: "https://wandb.ai/shivnarainms22-northeastern-university/tinylm/runs/dig7xsqf" },
+      { label: "GitHub", url: "https://github.com/shivnarainms22/TinyLM" },
+    ],
+  },
+  {
+    title: "DiffMamba",
+    kindLabel: "Reproduction & analysis study",
+    desc:
+      "An independent reproduction testing whether a bidirectional Mamba-2 denoiser can match a parameter-matched Transformer (DiT) inside the MDLM masked-diffusion framework, at 50–130M scale on academic HPC.",
+    highlights: [
+      "Ran five matched-compute experiments on Northeastern's A100 cluster — seed stability plus a 50→130M scaling study — with the full systems bring-up: CUDA/driver matching, source-built kernels, and SLURM job-chaining around an 8-hour wall limit.",
+      "Reached a clean, honestly-reported negative result (Transformer wins by ~17% validation perplexity), consistent with the reference work where only the hybrid backbone recovers quality.",
+    ],
+    tags: ["PyTorch Lightning", "Mamba-2", "MDLM", "A100 / SLURM", "OpenWebText"],
+    links: [
+      { label: "Report", url: "https://github.com/shivnarainms22/DiffMamba/blob/master/DiffMamba_Report.md" },
+      { label: "GitHub", url: "https://github.com/shivnarainms22/DiffMamba" },
+      { label: "Checkpoints", url: "https://huggingface.co/Shiv-22/diffmamba-checkpoints" },
+    ],
   },
 ];
 
@@ -221,4 +245,4 @@ export const contactInfo = {
   github: "https://github.com/shivnarainms22",
 };
 
-export const navItems = ["About", "Experience", "Projects", "Leadership", "Skills", "Education", "Contact"];
+export const navItems = ["About", "Experience", "Research", "Projects", "Leadership", "Skills", "Education", "Contact"];

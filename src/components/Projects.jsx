@@ -38,7 +38,6 @@ export function Projects() {
                     <span key={tag} className="project-card__tag">{tag}</span>
                   ))}
                 </div>
-                {project.note ? <div className="project-card__note">{project.note}</div> : null}
               </div>
             </article>
           ))}

@@ -77,7 +77,7 @@
 .nav__link {
   font-family: var(--font-sans);
   font-size: 12px;
-  color: var(--color-subtle);
+  color: var(--color-body);
   text-decoration: none;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
   padding: 0;
   transition: color 0.2s;
 }
-.nav__link:hover { color: var(--color-body); }
+.nav__link:hover { color: var(--color-heading); }
 .nav__link:focus-visible {
   outline: 1px solid var(--color-subtle);
   outline-offset: 4px;
@@ -142,13 +142,13 @@
 .footer__link {
   font-family: var(--font-sans);
   font-size: 12px;
-  color: var(--color-muted);
+  color: var(--color-body);
   text-decoration: none;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: color 0.2s;
 }
-.footer__link:hover { color: var(--color-body); }
+.footer__link:hover { color: var(--color-heading); }
 
 .footer__copy {
   margin-top: 64px;

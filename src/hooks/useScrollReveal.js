@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 
+const revealImmediately =
+  typeof window === "undefined" ||
+  typeof IntersectionObserver === "undefined" ||
+  (window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
 export function useScrollReveal(threshold = 0.1) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  // Show content right away when motion is reduced or IntersectionObserver is
+  // unavailable, so sections are never left stuck at opacity: 0.
+  const [visible, setVisible] = useState(revealImmediately);
 
   useEffect(() => {
+    if (visible) return;
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
@@ -13,7 +22,7 @@ export function useScrollReveal(threshold = 0.1) {
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [threshold]);
+  }, [threshold, visible]);
 
   return [ref, visible];
 }
