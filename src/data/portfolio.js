@@ -87,13 +87,13 @@ export const research = [
     desc:
       "A 275M-parameter language model built and trained from scratch with Multi-head Latent Attention (for KV-cache compression) and the Muon optimizer, benchmarked end-to-end against TinyLlama-1.1B.",
     highlights: [
-      "Designed a four-way ablation (MLA/MHA × Muon/AdamW) and pre-registered a falsifiable hypothesis, then reported results unedited.",
-      "Trained on FineWeb-Edu and evaluated on HellaSwag, ARC-Easy, LAMBADA, and Winogrande — reaching ARC-Easy within 1.9% of TinyLlama-1.1B at roughly a quarter of the parameters.",
+      "Designed and ran a four-way ablation (MLA/MHA × Muon/AdamW) on Northeastern's A100 cluster — trained on 8B tokens of FineWeb-Edu, evaluated on HellaSwag, ARC-Easy, LAMBADA, and Winogrande — with a pre-registered, falsifiable hypothesis and every result reported unedited.",
+      "Headline finding: training-data quality dominates architecture at this scale — fixing a data bug alone was worth +3.97 average points, ~2.6× the full architecture-and-optimizer gain of +1.52, with the best arm (MLA + Muon) landing within ~4.5% of TinyLlama-1.1B on ARC-Easy at roughly a quarter of the parameters.",
     ],
     tags: ["Python", "PyTorch", "MLA", "Muon", "lm-eval", "HuggingFace"],
     links: [
       { label: "Model", url: "https://huggingface.co/Shiv-22/tinylm" },
-      { label: "Checkpoints", url: "https://huggingface.co/Shiv-22/tinylm-checkpoints" },
+      { label: "Checkpoints", url: "https://huggingface.co/Shiv-22/tinylm-checkpoints-v2" },
       { label: "WandB", url: "https://wandb.ai/shivnarainms22-northeastern-university/tinylm/runs/dig7xsqf" },
       { label: "GitHub", url: "https://github.com/shivnarainms22/TinyLM" },
     ],
@@ -104,8 +104,8 @@ export const research = [
     desc:
       "An independent reproduction testing whether a bidirectional Mamba-2 denoiser can match a parameter-matched Transformer (DiT) inside the MDLM masked-diffusion framework, at 50–130M scale on academic HPC.",
     highlights: [
-      "Ran five matched-compute experiments on Northeastern's A100 cluster — seed stability plus a 50→130M scaling study — with the full systems bring-up: CUDA/driver matching, source-built kernels, and SLURM job-chaining around an 8-hour wall limit.",
-      "Reached a clean, honestly-reported negative result (Transformer wins by ~17% validation perplexity), consistent with the reference work where only the hybrid backbone recovers quality.",
+      "Trained matched models from scratch on OpenWebText across a two-seed stability check, a 50→130M scaling study, and a learning-rate fairness sweep — with the full systems bring-up: CUDA/driver matching, source-built kernels, and SLURM job-chaining around an 8-hour wall limit.",
+      "Honest mixed result: at matched compute the Transformer wins on quality (~20% validation perplexity; tuning BiMamba's learning rate closes ~43% of the gap but not all of it), yet the bidirectional Mamba-2 backbone runs ~3× faster at long context (3.12× at 32K tokens, linear vs the Transformer's near-quadratic scaling) — matching prior work where only a hybrid backbone recovers quality.",
     ],
     tags: ["PyTorch Lightning", "Mamba-2", "MDLM", "A100 / SLURM", "OpenWebText"],
     links: [
