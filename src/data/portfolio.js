@@ -47,16 +47,16 @@ export const projects = [
     title: "Workbench",
     desc: "A graph-grounded LLM reasoning system for lung adenocarcinoma, built at CalHacks and awarded Most Technical Hack. Upload a tumor mutation profile, watch it map onto a biological pathway graph, and ask an agent intervention questions. It answers by traversing a Neo4j knowledge graph and citing the exact subgraph it reasoned over.",
     highlights: [
-      "I built the agentic core from scratch: the planner that turns a question into Cypher, the read-only execution layer, the reasoner that writes a mechanistic report with an intervention verdict, and the orchestrator tying them together. The planner is grounded in the graph as actually loaded, so the model cannot cite entities it never retrieved.",
-      "Also mine: the drug-routing module that returns variant-specific targeted therapies and hands uncovered variants to the ML fallback classifier, the Neo4j transport over the HTTP Query API on port 443 so it works behind networks that block Bolt, the reasoning-subgraph visualization rendered beside every answer, and most of the backend test suite.",
-      "Then shipped it: split Vercel and Render deployment, chat stop, retry and persistent history with agent memory, and a fix for a wrong-subject bug where the background profile was overriding the node the user had actually selected.",
+      "Built the agentic core from scratch: the planner that turns a question into Cypher, the read-only execution layer, the reasoner that writes a mechanistic report with an intervention verdict, and the orchestrator tying them together. The planner is grounded in the graph as actually loaded, so the model cannot cite entities it never retrieved.",
+      "Wrote the drug-routing module that returns variant-specific targeted therapies and hands uncovered variants to the ML fallback classifier, the Neo4j transport over the HTTP Query API on port 443 so it works behind networks that block Bolt, the reasoning subgraph rendered beside every answer, and most of the backend test suite.",
+      "Took it to production on split Vercel and Render deployment, with chat stop, retry, and persistent history backed by agent memory, and node selection given precedence over the background profile so the agent reasons about what the user actually clicked.",
     ],
     tags: ["FastAPI", "Neo4j", "GraphRAG", "Claude API", "scikit-learn", "React"],
     links: [
       { label: "Live", url: "https://frontend-tan-two-ho66t3rmdo.vercel.app" },
       { label: "GitHub", url: "https://github.com/shivnarainms22/Workbench" },
     ],
-    note: "CalHacks · Most Technical Hack · team of 4",
+    note: "CalHacks · Most Technical Hack · my work in a team of 4",
   },
   {
     title: "Research Agent",
