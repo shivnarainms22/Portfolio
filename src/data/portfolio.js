@@ -56,7 +56,7 @@ export const projects = [
       { label: "Live", url: "https://frontend-tan-two-ho66t3rmdo.vercel.app" },
       { label: "GitHub", url: "https://github.com/shivnarainms22/Workbench" },
     ],
-    note: "CalHacks · Most Technical Hack · my work in a team of 4",
+    note: "CalHacks · Most Technical Hack · team of 4",
   },
   {
     title: "Research Agent",
