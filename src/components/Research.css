@@ -149,6 +149,15 @@
   color: var(--color-heading);
 }
 
+.research-card__note {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--color-subtle);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
 @media (max-width: 768px) {
   .research__grid {
     grid-template-columns: 1fr;

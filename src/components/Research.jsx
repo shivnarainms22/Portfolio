@@ -9,9 +9,9 @@ export function Research() {
         <div className="research__label">Research</div>
         <h2 className="research__heading">Experiments designed, run, and reported like research.</h2>
         <p className="research__intro">
-          From-scratch studies in language-model architecture — each with a pre-registered
-          hypothesis, controlled comparisons, and results reported exactly as they came out,
-          including the negative ones.
+          From-scratch studies in model architecture and evaluation, each with a pre-registered
+          hypothesis, controlled and cost-matched comparisons, and results reported exactly as they
+          came out, including the negative ones.
         </p>
         <div className="research__grid">
           {research.map((item, index) => (
@@ -37,19 +37,24 @@ export function Research() {
                     <span key={tag} className="research-card__tag">{tag}</span>
                   ))}
                 </div>
-                <div className="research-card__links">
-                  {item.links.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="research-card__link"
-                    >
-                      {link.label} <span aria-hidden="true">&#8599;</span>
-                    </a>
-                  ))}
-                </div>
+                {item.links.length > 0 && (
+                  <div className="research-card__links">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="research-card__link"
+                      >
+                        {link.label} <span aria-hidden="true">&#8599;</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {item.note && (
+                  <div className="research-card__note">{item.note}</div>
+                )}
               </div>
             </article>
           ))}

@@ -38,6 +38,24 @@ export function Projects() {
                     <span key={tag} className="project-card__tag">{tag}</span>
                   ))}
                 </div>
+                {project.links.length > 0 && (
+                  <div className="project-card__links">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__link"
+                      >
+                        {link.label} <span aria-hidden="true">&#8599;</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {project.note && (
+                  <div className="project-card__note">{project.note}</div>
+                )}
               </div>
             </article>
           ))}

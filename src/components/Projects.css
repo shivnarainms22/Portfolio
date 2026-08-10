@@ -125,15 +125,33 @@
   border: none;
 }
 
+.project-card__links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.project-card__link {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-body);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-card__link:hover {
+  color: var(--color-heading);
+}
+
 .project-card__note {
   font-family: var(--font-sans);
   font-size: 10px;
   color: var(--color-subtle);
   letter-spacing: 1.4px;
   text-transform: uppercase;
-}
-
-.project-card__note {
   margin-top: 18px;
 }
 
